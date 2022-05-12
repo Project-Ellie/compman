@@ -1,0 +1,1 @@
+python3 compman.py "$@" | grep -v pygame

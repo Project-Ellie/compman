@@ -1,0 +1,20 @@
+echo "Clearing players and tables"
+./cm players --clear
+./cm tables --clear
+
+echo "Registering two players"
+harry=$(./cm players --rcfile .compmanrc-harry -r Harry)
+echo "Harry: $harry"
+wolfie=$(./cm players -r Wolfie)
+echo "Wolfie: $wolfie"
+
+echo "Wolfie proposes a table of gomoku"
+table=$(./cm tables --propose --discipline gomoku)
+echo "Table: $table"
+
+echo "Harry joins"
+./cm tables -R .compmanrc-harry -j "$table"
+
+
+echo Play as Wolfie like so: ./cm games --play
+echo Play as Harry like so: ./cm games --play --rcfile .compmanrc-harry
