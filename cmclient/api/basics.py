@@ -4,6 +4,7 @@ from dataclasses import dataclass
 PLAYERS = 'players'
 TABLES = 'tables'
 GAMES = 'games'
+STUDY = 'study'
 HISTORY = 'history'
 CONFIG = 'config'
 

@@ -1,8 +1,9 @@
-from cmclient.api.basics import CompManConfig, PLAYERS, CONFIG, TABLES, GAMES, AbstractCompManApi
+from cmclient.api.basics import CompManConfig, PLAYERS, CONFIG, TABLES, GAMES, AbstractCompManApi, STUDY
 from cmclient.api.config import ConfigHandler
 from cmclient.api.games import GameHandler
 from cmclient.api.players import PlayerHandler, PlayerApi
 from cmclient.api.rest import RestAdapter
+from cmclient.api.study import StudyHandler
 from cmclient.api.tables import TableHandler, TableApi
 
 
@@ -23,6 +24,7 @@ class CompManHandler:
             TABLES: TableHandler(adapter, config),
             CONFIG: ConfigHandler(adapter, config),
             GAMES: GameHandler(adapter, config, superapi),
+            STUDY: StudyHandler(config)
         }
 
     def handle(self, args):

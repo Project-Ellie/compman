@@ -25,7 +25,8 @@ POLL_NOW = pygame.USEREVENT + 1
 def show(registered: str, oppenent: str, state: str,
          move_listener, polling_listener):
     pygame.init()
-    pygame.time.set_timer(POLL_NOW, TIME_DELAY)
+    if polling_listener is not None:
+        pygame.time.set_timer(POLL_NOW, TIME_DELAY)
     screen = pygame.display.set_mode(PHYSICAL_BOARD)
     screen.fill(COLOR_BOARD)
     pygame.display.set_caption(f"{registered} vs {oppenent}")
